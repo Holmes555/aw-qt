@@ -181,6 +181,8 @@ class TrayIcon(QSystemTrayIcon):
             ac.setData(module)
             ac.setCheckable(True)
             ac.setChecked(module.is_alive())
+            if title == "aw-notify":
+                ac.setEnabled(False)
 
         for location, modules in [
             ("bundled", self.manager.modules_bundled),
